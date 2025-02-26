@@ -16,7 +16,7 @@ const Header = (props) => {
                 <p className='text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-400'>{index}</p>
                 <h4 className='text-xl sm:text-2xl md:text-3xl'>{title}</h4>
             </div>
-            <p className='text-m sm:text-base mx-auto py-4'>{description}</p>
+            <p className='text-m sm:text-base mx-auto py-3'>{description}</p>
         </div>
     )
 }
@@ -40,7 +40,7 @@ const Generator = () => {
             })}
             <br />
         </div>
-        <Header index={'02'} title={['Lock ON targets']} description={'Select the muscles judged for annihilation.'} />
+        <Header index={'02'} title={['Lock on targets']} description={'Select the muscles judged for annihilation.'} />
         <div className='bg-slate-950 p-3 border-solid border-blue-400 border-[2px] rounded-lg w-full mx-auto text-left'>
             <div className='relative flex items-center justify-between gap-4'>
                 <p>Select Muscle Groups</p>
