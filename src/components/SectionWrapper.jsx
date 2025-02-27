@@ -5,9 +5,9 @@ import 'react'
 import PropTypes from 'prop-types'
 
 const SectionWrapper = (props) => {
-    const {children,header,title} = props
+    const {children,header,title, id} = props
     return (
-        <section className='min-h-screen flex flex-col gap-10 text-center w-full mx-auto'>
+        <section id={id} className='min-h-screen flex flex-col gap-10 text-center w-full mx-auto'>
             <div className='bg-slate-950 py-10 flex flex-col gap-4 rounded-lg align-center justify-center'>
                 <p className='uppercase font-medium'>{header}</p>
                 <h2 className='uppercase font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>{title[0]} <span className='uppercase text-blue-400'>{title[1]}</span> {title[2]}</h2>
@@ -18,7 +18,6 @@ const SectionWrapper = (props) => {
                 {/*children is a reserved word in React that refers to anything wrapped inside of a component*/}
 
             </div>
-            
         </section>
     )
 }

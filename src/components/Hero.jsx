@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import 'react'
+import  Button  from './Button'
 
 const Hero = () => {
   return (
@@ -10,9 +11,9 @@ const Hero = () => {
         </div>
         <h3>Get your daily workout routine</h3>
         <p className='text-sm md:text-base font-light'>I hereby acknowledgement that I may become <span className='text-blue-400 font-medium'>unbelievably swolenormous</span> and accept all risks of becoming the local <span className='text-blue-400 font-medium'>mass montrosity</span>, afflicted with severe body dismorphia, unable to fit through doors.</p>
-        <button className='bg-slate-950 text-white font-semibold py-4 px-8 rounded border-[2px] border-blue-400 border-solid blueShadow'>
-            <p>Accept and Begin</p>
-        </button>
+        <Button func={() => {
+                window.location.href = '#generate'
+            }} text={"Accept & Begin"}></Button>
     </div>
   )
 }

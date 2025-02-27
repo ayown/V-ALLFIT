@@ -1,30 +1,27 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 
 //child component of sectionWrapper.jsx
 //im passing in the header, title and description as props to the header component
 
-import 'react'
+import  { useState } from 'react'
 import SectionWrapper from './SectionWrapper'
-import { WORKOUTS } from '../utils/soldier'
-import { useState } from 'react'
+import { SCHEMES, WORKOUTS } from '../utils/soldier'
 import Button from './Button'
 
-const Header = (props) => {
-    const {index,title,description} = props
+function Header(props) {
+    const { index, title, description } = props
     return (
         <div className='flex flex-col gap-4'>
             <div className='flex items-center justify-center gap-2'>
                 <p className='text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-400'>{index}</p>
                 <h4 className='text-xl sm:text-2xl md:text-3xl'>{title}</h4>
             </div>
-            <p className='text-m sm:text-base mx-auto py-3'>{description}</p>
+            <p className='text-sm sm:text-base mx-auto'>{description}</p>
         </div>
     )
 }
 
-const Generator = () => {
-
+export default function Generator(props) {
     const { muscles, setMuscles, poison, setPoison, goal, setGoal, updateWorkout } = props
     const [showModal, setShowModal] = useState(false)
 
@@ -40,7 +37,7 @@ const Generator = () => {
             return
         }
 
-        if (muscles.length > 3) {
+        if (muscles.length > 2) {
             return
         }
 
@@ -51,18 +48,15 @@ const Generator = () => {
         }
 
         setMuscles([...muscles, muscleGroup])
-        if (muscles.length === 3) {
+        if (muscles.length === 2) {
             setShowModal(false)
         }
 
     }
 
     return (
-        <SectionWrapper header={'Generate your workout'} title={['It\'s','Huge','o\'clock']}>
-            {/* ye jaara sectionWrapper function mei as a prop*/}
-            <Header index={'01'} title={'Pick your poison'} description={'Select the type of workout you want to do.'} /> 
-            {/* ye jaara header function mei */}
-
+        <SectionWrapper id={'generate'} header={"generate your workout"} title={['It\'s', 'Huge', 'o\'clock']}>
+            <Header index={'01'} title={'Pick your poison'} description={"Select the workout you wish to endure."} />
             <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
                 {Object.keys(WORKOUTS).map((type, typeIndex) => {
                     return (
@@ -74,11 +68,9 @@ const Generator = () => {
                         </button>
                     )
                 })}
-                <br />
             </div>
-
-            <Header index={'02'} title={['Lock on targets']} description={'Select the muscles judged for annihilation.'} />
-            <div className='bg-slate-950 p-3 border-solid border-blue-400 border-[2px] rounded-lg w-full mx-auto text-left flex flex-col'>
+            <Header index={'02'} title={'Lock on targets'} description={"Select the muscles judged for annihilation."} />
+            <div className='bg-slate-950  border border-solid border-blue-400 rounded-lg flex flex-col'>
                 <button onClick={toggleModal} className='relative p-3 flex items-center justify-center'>
                     <p className='capitalize'>{muscles.length == 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
                     <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i>
@@ -97,7 +89,6 @@ const Generator = () => {
                     </div>
                 )}
             </div>
-
             <Header index={'03'} title={'Become Juggernaut'} description={"Select your ultimate objective."} />
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
                 {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
@@ -114,5 +105,3 @@ const Generator = () => {
         </SectionWrapper>
     )
 }
-
-export default Generator
