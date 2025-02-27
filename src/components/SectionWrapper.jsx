@@ -21,7 +21,7 @@ const SectionWrapper = (props) => {
         </section>
     )
 }
-SectionWrapper.PropTypes = {
+SectionWrapper.propTypes = {
     header: PropTypes.string.isRequired,
     title: PropTypes.array,
     children: PropTypes.node.isRequired

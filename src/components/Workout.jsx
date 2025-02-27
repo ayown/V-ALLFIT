@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-undef */
 import 'react'
+import SectionWrapper from './SectionWrapper'
+import ExerciseCard from './ExerciseCard'
 
 const Workout = (props) => {
     const { workout } = props
