@@ -1,9 +1,11 @@
-import 'react'
+/* eslint-disable no-unused-vars */
+import React from 'react'
 import Hero from './components/Hero'
 import Generator from './components/Generator'
 import Workout from './components/Workout'
 import { useState } from 'react'
-import { generateWorkout } from './utils/soldier'
+import { generateWorkout } from './utils/functions'
+
 
 
 const App = () => {
