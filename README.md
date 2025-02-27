@@ -1,6 +1,7 @@
 # Gym App
 
 A modern gym application built using React, Vite, and Tailwind CSS. This app provides workout calculations and guidance to help users achieve their fitness goals.
+![WEB.png](./public/WEB.png)
 
 ## Features
 
@@ -19,12 +20,14 @@ A modern gym application built using React, Vite, and Tailwind CSS. This app pro
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/ayown/V-ALLFIT.git
    cd V-ALLFIT
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -51,5 +54,5 @@ This project is licensed under the [LICENSE](/LICENSE).
 ---
 
 ### Contact
-For any inquiries, contact [bhattacharjeeayan93@gmail.com](mailto:bhattacharjeeayan93@gmail.com).
 
+For any inquiries, contact [bhattacharjeeayan93@gmail.com](mailto:bhattacharjeeayan93@gmail.com).
